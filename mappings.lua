@@ -6,21 +6,8 @@
 return {
   -- first key is the mode
   n = {
-    -- ["ä"] = { "[" },
-    ["ät"] = { function() vim.cmd.tabnext() end, desc = "Next tab" },
-    ["öt"] = { function() vim.cmd.tabprevious() end, desc = "Previous tab" },
-    ["äb"] = { function()
-      require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1)
-    end, desc = "Next buffer"
-    },
-    ["öb"] = {
-      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-      desc = "Previous buffer",
-    },
-    ["äg"] = { function() require("gitsigns").next_hunk() end, desc = "Next Git hunk" },
-    ["ög"] = { function() require("gitsigns").prev_hunk() end, desc = "Previous Git hunk" },
-
-
+    ["ä"] = { "[", remap = true },
+    ["ö"] = { "]" remap = true },
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
