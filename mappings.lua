@@ -14,8 +14,7 @@ return {
     ["<leader>bD"] = {
       function()
         require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
-          require("astronvim.utils.buffer").close(
-            bufnr)
+          require("astronvim.utils.buffer").close(bufnr)
         end)
       end,
       desc = "Pick to close",
@@ -23,6 +22,18 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+
+    ["]q"] = { ":cnext<cr>", name = "Quickfix Next" },
+    ["[q"] = { ":cprev<cr>", name = "Quickfix Prev" },
+
+    ["<leader>fx"] = {
+      require('telescope').extensions.toggletasks.spawn,
+      desc = "Spawn Task"
+    },
+    ["<leader>fX"] = {
+      require('telescope').extensions.toggletasks.select,
+      desc = "Running Tasks"
+    },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },

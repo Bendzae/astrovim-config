@@ -31,7 +31,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true,     -- enable or disable format on save globally
+        enabled = false,    -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -48,6 +48,10 @@ return {
       filter = function(client)
         -- only enable null-ls for kotlin files
         if vim.bo.filetype == "kotlin" then
+          return client.name == "null-ls"
+        end
+
+        if vim.bo.filetype == "typescript" then
           return client.name == "null-ls"
         end
 
