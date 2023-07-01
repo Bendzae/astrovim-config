@@ -26,21 +26,6 @@ return {
     end,
   },
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = false,
-    config = function()
-      require("catppuccin").setup {}
-    end,
-  },
-  {
-    "sainnhe/sonokai",
-    lazy = false,
-    init = function() -- init function runs before the plugin is loaded
-      vim.g.sonokai_style = "andromeda"
-    end,
-  },
-  {
     "jedrzejboczar/toggletasks.nvim",
     lazy = false,
     requires = {
@@ -84,8 +69,8 @@ return {
         -- Configuration of telescope pickers
         telescope = {
           spawn = {
-            open_single = true,   -- auto-open terminal window when spawning a single task
-            show_running = false, -- include already running tasks in picker candidates
+            open_single = false,   -- auto-open terminal window when spawning a single task
+            show_running = true, -- include already running tasks in picker candidates
             -- Replaces default select_* actions to spawn task (and change toggleterm
             -- direction for select horiz/vert/tab)
             mappings = {
