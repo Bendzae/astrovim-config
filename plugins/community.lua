@@ -6,6 +6,7 @@ return {
 
   { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
   { import = "astrocommunity.pack.rust", enabled = true },
+  { import = "astrocommunity.pack.wgsl", enabled = true },
   { import = "astrocommunity.pack.html-css", enabled = true },
   { import = "astrocommunity.pack.tailwindcss", enabled = true },
   { import = "astrocommunity.pack.typescript-all-in-one", enabled = true },
