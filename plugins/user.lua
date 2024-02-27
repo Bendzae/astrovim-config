@@ -1,6 +1,16 @@
 return {
   { "mg979/vim-visual-multi", lazy = false },
-  { "petrbroz/vim-glsl", lazy = false },
+  { "petrbroz/vim-glsl" },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
   {
     "rebelot/heirline.nvim",
     opts = function(_, opts)

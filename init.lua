@@ -49,16 +49,6 @@ return {
         -- "lua_ls",
       },
       timeout_ms = 5000, -- default format timeout
-
-      filter = function(client)
-        -- only enable null-ls for kotlin files
-        if vim.bo.filetype == "kotlin" then return client.name == "null-ls" end
-
-        if vim.bo.filetype == "typescript" then return client.name == "null-ls" end
-
-        -- enable all other clients
-        return true
-      end,
     },
     -- enable servers that you already have installed without mason
     servers = {
@@ -81,6 +71,8 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- a nil path defaults to .vscode/launch.json
+    require("dap.ext.vscode").load_launchjs(nil, { rt_lldb = { "rust" } })
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
