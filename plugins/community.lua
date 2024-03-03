@@ -18,6 +18,7 @@ return {
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.utility.noice-nvim" },
+  -- { import = "astrocommunity.note-taking.obsidian-nvim" }, -> obsidian.lua
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
