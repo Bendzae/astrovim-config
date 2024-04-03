@@ -1,3 +1,4 @@
+local utils = require "astronvim.utils"
 return {
   -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
@@ -7,6 +8,23 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.java" },
+  {
+    "mfussenegger/nvim-jdtls",
+    opts = {
+      settings = {
+        java = {
+          configuration = {
+            runtimes = {
+              {
+                name = "JavaSE-17",
+                path = "/Users/Ben/.sdkman/candidates/java/17.0.0-tem",
+              },
+            },
+          },
+        },
+      },
+    },
+  },
   { import = "astrocommunity.pack.kotlin" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.docker" },
@@ -18,6 +36,7 @@ return {
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.motion.harpoon" },
   -- { import = "astrocommunity.note-taking.obsidian-nvim" }, -> obsidian.lua
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
